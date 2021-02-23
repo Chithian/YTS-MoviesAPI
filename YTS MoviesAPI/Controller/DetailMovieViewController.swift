@@ -10,10 +10,9 @@ import UIKit
 
 class DetailMovieViewController: UIViewController {
 
+//    @IBOutlet weak var watchNowButton: UIButton!
     
     @IBOutlet weak var watchNowButton: UIButton!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +20,16 @@ class DetailMovieViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         
-        watchNowButton.layer.cornerRadius = 16
+//        Watch Now Button
+
+        watchNowButton.layer.cornerRadius = 20
         watchNowButton.layer.shadowColor = UIColor.black.cgColor
         watchNowButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         watchNowButton.layer.shadowRadius = 10
         watchNowButton.layer.shadowOpacity = 0.7
+
         
+//        NavigationBar
         
     }
     
