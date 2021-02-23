@@ -16,6 +16,7 @@
 		430F1B8F25E4ADCE00413416 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430F1B8E25E4ADCE00413416 /* MovieCell.xib */; };
 		430F1B9225E4B88000413416 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1B9125E4B88000413416 /* MovieData.swift */; };
 		430F1B9525E4B8B600413416 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430F1B9425E4B8B600413416 /* MovieManager.swift */; };
+		43628BEF25E4D27100915EE0 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43628BEE25E4D27100915EE0 /* DetailMovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		430F1B8E25E4ADCE00413416 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		430F1B9125E4B88000413416 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		430F1B9425E4B8B600413416 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		43628BEE25E4D27100915EE0 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,6 @@
 		430F1B7225E49FBC00413416 /* YTS MoviesAPI */ = {
 			isa = PBXGroup;
 			children = (
-				430F1B7725E49FBC00413416 /* ViewController.swift */,
 				430F1B8A25E4A05900413416 /* View */,
 				430F1B8925E4A04F00413416 /* Model */,
 				430F1B8B25E4A05F00413416 /* Controller */,
@@ -96,6 +97,8 @@
 		430F1B8B25E4A05F00413416 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				430F1B7725E49FBC00413416 /* ViewController.swift */,
+				43628BEE25E4D27100915EE0 /* DetailMovieViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				430F1B7825E49FBC00413416 /* ViewController.swift in Sources */,
 				430F1B9525E4B8B600413416 /* MovieManager.swift in Sources */,
 				430F1B7425E49FBC00413416 /* AppDelegate.swift in Sources */,
+				43628BEF25E4D27100915EE0 /* DetailMovieViewController.swift in Sources */,
 				430F1B7625E49FBC00413416 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
