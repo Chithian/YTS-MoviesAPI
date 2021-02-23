@@ -31,6 +31,14 @@ class DetailMovieViewController: UIViewController {
         
 //        NavigationBar
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+        
+     //Remove Boder Navigation
+        self.navigationController?.navigationBar.layoutIfNeeded()
+ 
+        
     }
     
 

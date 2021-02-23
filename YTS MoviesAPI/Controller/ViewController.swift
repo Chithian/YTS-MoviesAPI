@@ -10,28 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
-        //Center search text
-        if let searchBarTextField = searchBar.value(forKey: "searchField") as? UITextField {
-
-                //Center search text
-                searchBarTextField.textAlignment = .center
-
-                //Center placeholder
-                let width = searchBar.frame.width / 2 - (searchBarTextField.attributedPlaceholder?.size().width)!
-                let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: searchBar.frame.height))
-                searchBarTextField.leftView = paddingView
-                searchBarTextField.leftViewMode = .unlessEditing
-            }
+        //Remove Navifation Bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //Change Search Border
+        searchBar.barTintColor = UIColor.white
+        searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        
+        
+        
     }
 
 
+    @IBAction func testDetailPage(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "GotoDetailMovie", sender: self)
+    }
 }
 
