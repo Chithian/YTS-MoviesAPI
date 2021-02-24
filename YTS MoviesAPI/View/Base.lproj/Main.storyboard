@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,25 +25,42 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2I-FH-KjD">
-                                <rect key="frame" x="348" y="127" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="testbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2T-zo-6bj"/>
-                                </connections>
-                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n14-ib-BFu">
+                                <rect key="frame" x="0.0" y="104" width="414" height="632"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PEf-JD-ger">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="bbj-07-XOZ" customClass="MovieCell" customModule="YTS_MoviesAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zHF-Se-UIt">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="n14-ib-BFu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="84D-yl-fWG"/>
                             <constraint firstItem="6BJ-eG-knZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JPo-st-w0b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n14-ib-BFu" secondAttribute="trailing" id="Mgw-Gm-JH4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6BJ-eG-knZ" secondAttribute="trailing" constant="10" id="RHw-6b-G3B"/>
+                            <constraint firstItem="n14-ib-BFu" firstAttribute="top" secondItem="6BJ-eG-knZ" secondAttribute="bottom" id="ecV-a3-Ecc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n14-ib-BFu" secondAttribute="bottom" id="hiT-Dz-4aL"/>
                             <constraint firstItem="6BJ-eG-knZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nrX-Zv-aA6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qCq-jU-eNF"/>
                     <connections>
+                        <outlet property="collectionView" destination="n14-ib-BFu" id="8nM-Ba-Moj"/>
                         <outlet property="searchBar" destination="6BJ-eG-knZ" id="OlR-jq-3fk"/>
                         <segue destination="MrR-W6-8Xh" kind="show" identifier="GotoDetailMovie" id="VUK-6T-N6W"/>
                     </connections>
