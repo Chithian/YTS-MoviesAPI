@@ -17,17 +17,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="191" height="406"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsterHunterMoive" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-Ym-hUQ">
-                        <rect key="frame" x="0.0" y="0.0" width="191" height="306"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsterHunterMoive" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-Ym-hUQ">
+                        <rect key="frame" x="10" y="0.0" width="171" height="306"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="306" id="9AH-TA-01R"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster Hunter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inn-oN-PF2">
-                        <rect key="frame" x="0.0" y="316" width="181" height="21.5"/>
+                        <rect key="frame" x="10" y="316" width="171" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fpe-G3-wPF">
-                        <rect key="frame" x="0.0" y="347.5" width="161" height="20"/>
+                        <rect key="frame" x="10" y="347.5" width="161" height="20"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-1c-me9">
                                 <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
@@ -62,11 +65,11 @@
                         </subviews>
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hkb-SO-x1N">
-                        <rect key="frame" x="0.0" y="376" width="70" height="3.5"/>
+                        <rect key="frame" x="5" y="376" width="60" height="3.5"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="2hM-ej-e1J"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="F69-C0-7pl"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="7" id="2hM-ej-e1J"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="F69-C0-7pl"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -74,15 +77,15 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="Hkb-SO-x1N" firstAttribute="top" secondItem="fpe-G3-wPF" secondAttribute="bottom" id="8aP-bl-qxS"/>
-                <constraint firstItem="inn-oN-PF2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G1q-nX-8Uc"/>
-                <constraint firstAttribute="trailing" secondItem="Ceo-Ym-hUQ" secondAttribute="trailing" id="HLs-kT-Pq6"/>
+                <constraint firstItem="inn-oN-PF2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="G1q-nX-8Uc"/>
+                <constraint firstAttribute="trailing" secondItem="Ceo-Ym-hUQ" secondAttribute="trailing" constant="10" id="HLs-kT-Pq6"/>
                 <constraint firstAttribute="bottom" secondItem="Ceo-Ym-hUQ" secondAttribute="bottom" constant="100" id="P26-1G-8ST"/>
-                <constraint firstItem="Ceo-Ym-hUQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uv8-ZA-QWq"/>
-                <constraint firstItem="fpe-G3-wPF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dAy-lF-avh"/>
+                <constraint firstItem="Ceo-Ym-hUQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Uv8-ZA-QWq"/>
+                <constraint firstItem="fpe-G3-wPF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="dAy-lF-avh"/>
                 <constraint firstItem="Ceo-Ym-hUQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fhn-kI-k6F"/>
                 <constraint firstItem="fpe-G3-wPF" firstAttribute="top" secondItem="inn-oN-PF2" secondAttribute="bottom" constant="10" id="jaI-iz-JWj"/>
                 <constraint firstItem="inn-oN-PF2" firstAttribute="top" secondItem="Ceo-Ym-hUQ" secondAttribute="bottom" constant="10" id="nGV-Ew-OKv"/>
-                <constraint firstItem="Hkb-SO-x1N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="txj-oE-U41"/>
+                <constraint firstItem="Hkb-SO-x1N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="txj-oE-U41"/>
                 <constraint firstAttribute="trailing" secondItem="inn-oN-PF2" secondAttribute="trailing" constant="10" id="zy6-Sx-HPK"/>
             </constraints>
             <size key="customSize" width="191" height="406"/>

@@ -21,6 +21,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 200, height: 340)
+        collectionView.collectionViewLayout = layout
+        
+
 
         collectionView.register(MovieCollectionViewCell.nib(), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         
@@ -46,7 +51,6 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
       
     }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -55,8 +59,6 @@ class ViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
-
-    
 }
 
 
@@ -82,9 +84,13 @@ extension ViewController: UICollectionViewDataSource {
         cell.configure(with: UIImage(named: "monsterHunterMoive")!)
         return cell
     }
+    
+
 }
 
-//
-//extension ViewController: UICollectionViewDelegateFlowLayout {
-//    
-//}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         return CGSize(width: 200, height: 340)
+    }
+}

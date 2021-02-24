@@ -8,8 +8,6 @@
 import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
-
-    
     @IBOutlet var imageView: UIImageView!
     
     static let identifier = "MovieCollectionViewCell"
