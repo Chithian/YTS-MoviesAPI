@@ -10,7 +10,6 @@ import UIKit
 
 class DetailMovieViewController: UIViewController {
 
-//    @IBOutlet weak var watchNowButton: UIButton!
     
     @IBOutlet weak var watchNowButton: UIButton!
     
@@ -35,6 +34,8 @@ class DetailMovieViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
         
+
+//        
      //Remove Boder Navigation
         self.navigationController?.navigationBar.layoutIfNeeded()
  

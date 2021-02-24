@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKb-rl-uso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ihN-pf-oEG">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -24,6 +24,14 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2I-FH-KjD">
+                                <rect key="frame" x="348" y="127" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2T-zo-6bj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -33,13 +41,7 @@
                             <constraint firstItem="6BJ-eG-knZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nrX-Zv-aA6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qCq-jU-eNF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="NKN-ZD-bRw">
-                            <connections>
-                                <action selector="testDetailPage:" destination="BYZ-38-t0r" id="uoU-L7-syA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="qCq-jU-eNF"/>
                     <connections>
                         <outlet property="searchBar" destination="6BJ-eG-knZ" id="OlR-jq-3fk"/>
                         <segue destination="MrR-W6-8Xh" kind="show" identifier="GotoDetailMovie" id="VUK-6T-N6W"/>
@@ -47,9 +49,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.69565217391312" y="114.50892857142857"/>
+            <point key="canvasLocation" x="2523.1884057971015" y="114.1304347826087"/>
         </scene>
-        <!--Title-->
+        <!--Detail Movie View Controller-->
         <scene sceneID="bZz-5a-XIK">
             <objects>
                 <viewController id="MrR-W6-8Xh" customClass="DetailMovieViewController" customModule="YTS_MoviesAPI" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,13 +98,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The God of Monster Hunter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-Qc-bDb">
-                                <rect key="frame" x="20" y="520" width="215.33333333333334" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="17"/>
+                                <rect key="frame" x="19.999999999999986" y="520" width="240.66666666666663" height="22.666666666666629"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nZ5-po-3uR">
-                                <rect key="frame" x="20" y="632" width="374" height="40"/>
+                                <rect key="frame" x="20" y="637" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MX-jl-sWr">
                                         <rect key="frame" x="0.0" y="0.0" width="195" height="40"/>
@@ -153,7 +155,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A detective fiction authoress makes a lot of romantic and funny stories with a criminal police and a fascinating sweet guy..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xts-Iv-UsV">
-                                <rect key="frame" x="20" y="555.33333333333337" width="374" height="57.333333333333371"/>
+                                <rect key="frame" x="20" y="557.66666666666663" width="374" height="57.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -165,7 +167,7 @@
                             <constraint firstItem="jPy-Qc-bDb" firstAttribute="top" secondItem="6az-HU-GZr" secondAttribute="bottom" constant="20" id="47d-aG-7VI"/>
                             <constraint firstItem="DY9-cQ-6v3" firstAttribute="trailing" secondItem="xts-Iv-UsV" secondAttribute="trailing" constant="20" id="AFY-Hi-L8w"/>
                             <constraint firstItem="jPy-Qc-bDb" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" constant="20" id="ODG-u8-EcV"/>
-                            <constraint firstItem="DY9-cQ-6v3" firstAttribute="bottom" secondItem="nZ5-po-3uR" secondAttribute="bottom" constant="15" id="Ohh-mG-9cq"/>
+                            <constraint firstItem="DY9-cQ-6v3" firstAttribute="bottom" secondItem="nZ5-po-3uR" secondAttribute="bottom" constant="10" id="Ohh-mG-9cq"/>
                             <constraint firstItem="6az-HU-GZr" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" constant="20.670000000000002" id="Pti-jC-3Yk"/>
                             <constraint firstItem="XFg-23-k26" firstAttribute="top" secondItem="BDA-dS-FjI" secondAttribute="top" id="RG3-3S-4dg"/>
                             <constraint firstItem="XFg-23-k26" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" id="RtG-Wc-OMD"/>
@@ -179,7 +181,11 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="NOd-Ze-59X"/>
+                    <navigationItem key="navigationItem" id="TCc-dY-msp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Glu-FK-paX">
+                            <color key="tintColor" red="0.99999064209999999" green="0.9999936223" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="watchNowButton" destination="0MX-jl-sWr" id="DAo-yd-KDW"/>
@@ -187,30 +193,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNk-Jd-HiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.8115942028987" y="114.1304347826087"/>
+            <point key="canvasLocation" x="3491.3043478260875" y="114.1304347826087"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aaa-CU-Wde">
+        <scene sceneID="GGe-xP-Ouj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jKb-rl-uso" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ihN-pf-oEG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8a2-jb-mPj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.backward" catalog="system" backIndicatorTransitionMaskImage="arrow.backward" id="Q0r-WC-rEy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" red="0.99999064209999999" green="0.9999936223" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.99999064209999999" green="0.9999936223" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TzY-Nr-Lxn"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DaU-tG-m9r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="arP-aW-cBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3WC-GL-v6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201.44927536231884" y="114.50892857142857"/>
+            <point key="canvasLocation" x="1615.9420289855075" y="114.1304347826087"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="monsterHunterMoive" width="333.33334350585938" height="500"/>
@@ -220,9 +227,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
