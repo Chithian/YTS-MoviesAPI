@@ -91,6 +91,9 @@
             <size key="customSize" width="191" height="406"/>
             <connections>
                 <outlet property="imageView" destination="Ceo-Ym-hUQ" id="Nwl-zX-gHS"/>
+                <outlet property="movieRuntime" destination="dUA-Mz-j0k" id="xxm-00-FXf"/>
+                <outlet property="movieTitle" destination="inn-oN-PF2" id="LGc-9I-iDM"/>
+                <outlet property="yearMovie" destination="nRa-qJ-oUl" id="4Ks-fJ-azq"/>
             </connections>
             <point key="canvasLocation" x="234.05797101449278" y="195.53571428571428"/>
         </collectionViewCell>

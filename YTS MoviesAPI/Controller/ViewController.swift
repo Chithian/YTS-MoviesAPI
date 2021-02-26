@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         
 
     }
+    
    
     
     // Navigation
@@ -68,7 +69,7 @@ extension ViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You Taped")
         
-        performSegue(withIdentifier: "GotoDetailMovie", sender: self)
+        performSegue(withIdentifier: Constants.movieDetailSegue , sender: self)
     }
     
 }
@@ -94,3 +95,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
          return CGSize(width: 200, height: 340)
     }
 }
+//
+//extension ViewController: MovieManagerDelegate {
+//    func moviesManager(_ didUpdateWithMovies: [Movie], _ withMoviesImages: [UIImage]) {
+//        <#code#>
+//    }
+//    
+//    
+//}

@@ -7,8 +7,15 @@
 
 import UIKit
 
+
 class MovieCollectionViewCell: UICollectionViewCell {
+    
+    
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieRuntime: UILabel!
+    @IBOutlet weak var yearMovie: UILabel!
+    
     
     static let identifier = "MovieCollectionViewCell"
     

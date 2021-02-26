@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import Cosmos
 
 
 class DetailMovieViewController: UIViewController {
 
     
+    @IBOutlet weak var moiveImage: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var watchNowButton: UIButton!
+    @IBOutlet weak var MovieSummaryLabel: UILabel!
+    @IBOutlet weak var movieYear: UILabel!
+    @IBOutlet weak var movieRunTime: UILabel!
+    
+    @IBOutlet weak var cosmosView: CosmosView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +34,9 @@ class DetailMovieViewController: UIViewController {
         watchNowButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         watchNowButton.layer.shadowRadius = 10
         watchNowButton.layer.shadowOpacity = 0.7
-
+        // Do not change rating when touched
+        // Use if you need just to show the stars without getting user's input
+        cosmosView.settings.updateOnTouch = false
         
 //        NavigationBar
         
@@ -42,7 +52,10 @@ class DetailMovieViewController: UIViewController {
         
     }
     
-
+    @IBAction func WatchNowPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: Constants.youtubeSegue , sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
