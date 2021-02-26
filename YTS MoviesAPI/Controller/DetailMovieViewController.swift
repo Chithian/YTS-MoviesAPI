@@ -15,20 +15,39 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var moiveImage: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var watchNowButton: UIButton!
-    @IBOutlet weak var MovieSummaryLabel: UILabel!
+    @IBOutlet weak var movieSummaryLabel: UILabel!
     @IBOutlet weak var movieYear: UILabel!
     @IBOutlet weak var movieRunTime: UILabel!
+    @IBOutlet weak var movieLongtitle: UILabel!
     
-    @IBOutlet weak var cosmosView: CosmosView!
+    @IBOutlet weak var rankingCosmosView: CosmosView!
     
-    var movieTitle: String?
+    var titleLabel: String?
+    var yearLabel: Int?
+    var runtimeLabel: Int?
+    var rankingLabel: Float?
+    var summaryLabel: String?
+    var longTitleLabel: String?
+    var youtubeID: String?
+    var imageMovie: UIImage?
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
         
+        // Do any additional setup after loading the view.
+        moiveImage.image = imageMovie
+        movieTitleLabel.text = titleLabel
+        movieYear.text = String(yearLabel!)
+        movieRunTime.text = String(runtimeLabel!) + " min"
+        movieLongtitle.text = longTitleLabel
+        movieSummaryLabel.text = summaryLabel
+
+        rankingCosmosView.rating = Double(rankingLabel! / 2)
+        
+
+
 //        Watch Now Button
 
         watchNowButton.layer.cornerRadius = 20
@@ -36,9 +55,11 @@ class DetailMovieViewController: UIViewController {
         watchNowButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         watchNowButton.layer.shadowRadius = 10
         watchNowButton.layer.shadowOpacity = 0.7
+        
+        
         // Do not change rating when touched
         // Use if you need just to show the stars without getting user's input
-        cosmosView.settings.updateOnTouch = false
+        rankingCosmosView.settings.updateOnTouch = false
         
 //        NavigationBar
         

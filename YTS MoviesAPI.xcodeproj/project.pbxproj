@@ -107,7 +107,6 @@
 				430F1B7925E49FBC00413416 /* Main.storyboard */,
 				4336AB6F25E614EC00AEFB37 /* MovieCollectionViewCell.swift */,
 				4336AB7025E614EC00AEFB37 /* MovieCollectionViewCell.xib */,
-				43D8BB7D25E899090014476A /* YTPlayerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +116,7 @@
 			children = (
 				430F1B7725E49FBC00413416 /* MovieViewController.swift */,
 				43628BEE25E4D27100915EE0 /* DetailMovieViewController.swift */,
+				43D8BB7D25E899090014476A /* YTPlayerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@ class YTPlayerViewController: UIViewController {
 
     @IBOutlet weak var playerView: YTPlayerView!
     
+    var youtubeID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

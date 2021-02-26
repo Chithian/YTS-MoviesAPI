@@ -16,8 +16,10 @@ class MovieViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var movies = [Movie]()
-    var images = [UIImage]()
+
+    var movies: [Movie]?
+    var images: [UIImage]?
+    
     var movieManager = MoviesManager()
     
     override func viewDidLoad() {
@@ -70,42 +72,67 @@ class MovieViewController: UIViewController {
 
 extension MovieViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         print("You Taped")
-        
         performSegue(withIdentifier: Constants.movieDetailSegue , sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! DetailMovieViewController
         
-//        destination.movieTitle = titleLabel
-//        destination.movieYear = yearLabel
-//        destination.movieRunTime = runtimeLabel
-//        destination.MovieSummaryLabel = summaryLabel
-//
+        if let indexPaths = self.collectionView.indexPathsForSelectedItems {
+            print(indexPaths[0])
+            let selectedMovie = self.movies![indexPaths[0].row]
+            let movieImage = self.images![indexPaths[0].row]
+
+            destination.titleLabel = selectedMovie.title
+            destination.yearLabel = selectedMovie.year
+            destination.runtimeLabel = selectedMovie.runtime
+            destination.summaryLabel = selectedMovie.summary
+            destination.longTitleLabel = selectedMovie.title_long
+            destination.imageMovie = movieImage
+            destination.rankingLabel = selectedMovie.rating
+            destination.youtubeID = selectedMovie.yt_trailer_code
+            
+           
+            
+//            var titleLabel: String?
+//            var yearLabel: Int?
+//            var runtimeLabel: Int?
+//            var rankingLabel: Float?
+//            var summaryLabel: String?
+//            var longTitleLabel: String?
+//            var youtubeID: String?
+//            var imageMovie: UIImage?
+            
+        }
+
         
     }
+    
+    
 }
 
 extension MovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        
+        guard let safeMovies = movies else { return 0 }
+        return safeMovies.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
         cell.configure(with: UIImage(named: "monsterHunterMoive")!)
+//        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ReuseableMovieCell", for: indexPath) as! MovieCollectionViewCell
         
         let index = indexPath.row
-        let movie = movies[index]
+        let movie = movies![index]
     
         cell.movieTitle.text = movie.title
         cell.movieRuntime.text = String(movie.runtime) + " min"
         cell.movieYear.text = String(movie.year)
         
-        let image = images[index]
+        let image = images![index]
         cell .movieImage.image = image
         return cell
     }

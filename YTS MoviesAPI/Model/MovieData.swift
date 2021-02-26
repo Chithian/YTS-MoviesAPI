@@ -19,7 +19,7 @@ struct ResultsData: Codable {
 struct Movie: Codable {
 //    let id: Int
     let title: String
-    let title_long: String?
+    let title_long: String
     let summary: String
     let year: Int
     let runtime: Int

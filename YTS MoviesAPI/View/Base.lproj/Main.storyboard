@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ihN-pf-oEG">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,6 +33,10 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="hcV-R7-tIG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="632"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="bbj-07-XOZ" customClass="MovieCell" customModule="YTS_MoviesAPI" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="140" height="128"/>
@@ -82,23 +85,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6az-HU-GZr">
                                 <rect key="frame" x="20.666666666666657" y="470" width="305.66666666666674" height="30"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nX2-C5-1MK">
-                                        <rect key="frame" x="0.0" y="5" width="82" height="20.333333333333332"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RQ0-sh-r9A">
-                                                <rect key="frame" x="0.0" y="0.99999999999999822" width="19.666666666666668" height="19"/>
-                                                <color key="tintColor" systemColor="systemGrayColor"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-V6-g3G">
-                                                <rect key="frame" x="24.666666666666668" y="0.33333333333331439" width="57.333333333333329" height="19.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-lZ-YrH">
-                                        <rect key="frame" x="102.00000000000001" y="5" width="63.666666666666671" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="5" width="63.666666666666664" height="20.333333333333332"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mTi-5g-gpP">
                                                 <rect key="frame" x="0.0" y="1.6666666666666643" width="20.666666666666668" height="17.333333333333336"/>
@@ -106,6 +94,21 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcM-RP-IBp">
                                                 <rect key="frame" x="25.666666666666671" y="0.33333333333331439" width="38" height="19.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nX2-C5-1MK">
+                                        <rect key="frame" x="83.666666666666657" y="5" width="82" height="20.333333333333332"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RQ0-sh-r9A">
+                                                <rect key="frame" x="0.0" y="0.99999999999999822" width="19.666666666666668" height="19"/>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="130 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-V6-g3G">
+                                                <rect key="frame" x="24.666666666666675" y="0.33333333333331439" width="57.333333333333343" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -132,8 +135,8 @@
                                     <constraint firstAttribute="height" constant="30" id="t6J-Gb-Pnz"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The God of Monster Hunter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-Qc-bDb">
-                                <rect key="frame" x="19.999999999999986" y="520" width="240.66666666666663" height="22.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The God of Monster Hunter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPy-Qc-bDb">
+                                <rect key="frame" x="19.999999999999986" y="515" width="240.66666666666663" height="22.666666666666629"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -192,8 +195,8 @@
                                     <constraint firstItem="nJu-P3-gCS" firstAttribute="leading" secondItem="XFg-23-k26" secondAttribute="leading" id="rEt-EQ-rP6"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A detective fiction authoress makes a lot of romantic and funny stories with a criminal police and a fascinating sweet guy..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xts-Iv-UsV">
-                                <rect key="frame" x="20" y="557.66666666666663" width="374" height="57.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="A detective fiction authoress makes a lot of romantic and funny stories with a criminal police and a fascinating sweet guy..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xts-Iv-UsV">
+                                <rect key="frame" x="20" y="547.66666666666663" width="374" height="79.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -202,7 +205,7 @@
                         <viewLayoutGuide key="safeArea" id="DY9-cQ-6v3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jPy-Qc-bDb" firstAttribute="top" secondItem="6az-HU-GZr" secondAttribute="bottom" constant="20" id="47d-aG-7VI"/>
+                            <constraint firstItem="jPy-Qc-bDb" firstAttribute="top" secondItem="6az-HU-GZr" secondAttribute="bottom" constant="15" id="47d-aG-7VI"/>
                             <constraint firstItem="DY9-cQ-6v3" firstAttribute="trailing" secondItem="xts-Iv-UsV" secondAttribute="trailing" constant="20" id="AFY-Hi-L8w"/>
                             <constraint firstItem="jPy-Qc-bDb" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" constant="20" id="ODG-u8-EcV"/>
                             <constraint firstItem="DY9-cQ-6v3" firstAttribute="bottom" secondItem="nZ5-po-3uR" secondAttribute="bottom" constant="10" id="Ohh-mG-9cq"/>
@@ -213,8 +216,9 @@
                             <constraint firstItem="DY9-cQ-6v3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jPy-Qc-bDb" secondAttribute="trailing" symbolic="YES" id="YvO-yG-xG1"/>
                             <constraint firstItem="6az-HU-GZr" firstAttribute="top" secondItem="XFg-23-k26" secondAttribute="bottom" constant="20" id="ba3-R5-IZc"/>
                             <constraint firstItem="DY9-cQ-6v3" firstAttribute="trailing" secondItem="nZ5-po-3uR" secondAttribute="trailing" constant="20" id="cjG-A5-GRC"/>
+                            <constraint firstItem="nZ5-po-3uR" firstAttribute="top" secondItem="xts-Iv-UsV" secondAttribute="bottom" constant="10" id="m6s-DV-qUS"/>
                             <constraint firstItem="xts-Iv-UsV" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" constant="20" id="pBq-FB-6hD"/>
-                            <constraint firstItem="xts-Iv-UsV" firstAttribute="top" secondItem="jPy-Qc-bDb" secondAttribute="bottom" constant="15" id="paB-E6-KKX"/>
+                            <constraint firstItem="xts-Iv-UsV" firstAttribute="top" secondItem="jPy-Qc-bDb" secondAttribute="bottom" constant="10" id="paB-E6-KKX"/>
                             <constraint firstItem="nZ5-po-3uR" firstAttribute="leading" secondItem="DY9-cQ-6v3" secondAttribute="leading" constant="20" id="smh-9E-3hB"/>
                         </constraints>
                     </view>
@@ -226,12 +230,13 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="MovieSummaryLabel" destination="xts-Iv-UsV" id="kJR-2Z-8dg"/>
-                        <outlet property="cosmosView" destination="Wml-Jq-NFP" id="n0B-5R-wJv"/>
                         <outlet property="moiveImage" destination="nJu-P3-gCS" id="LbN-Xj-LiB"/>
+                        <outlet property="movieLongtitle" destination="jPy-Qc-bDb" id="ee0-nv-FAG"/>
                         <outlet property="movieRunTime" destination="v8d-V6-g3G" id="Mpr-Gp-kit"/>
+                        <outlet property="movieSummaryLabel" destination="xts-Iv-UsV" id="kJR-2Z-8dg"/>
                         <outlet property="movieTitleLabel" destination="ovz-sJ-oor" id="5TC-QF-Vtf"/>
                         <outlet property="movieYear" destination="RcM-RP-IBp" id="fBc-UV-oEC"/>
+                        <outlet property="rankingCosmosView" destination="Wml-Jq-NFP" id="n0B-5R-wJv"/>
                         <outlet property="watchNowButton" destination="0MX-jl-sWr" id="DAo-yd-KDW"/>
                         <segue destination="1y5-Wy-iH3" kind="showDetail" identifier="GoToYoutube" id="dAF-vH-kpD"/>
                     </connections>
