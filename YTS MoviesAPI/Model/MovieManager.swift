@@ -17,6 +17,7 @@ class MoviesManager {
     var delegate: MovieManagerDelegate?
     
     let urlString = "https://yts.mx/api/v2/list_movies.json"
+    
     var movies : [Movie]?
     var moviesImages: [UIImage]?
    
@@ -28,12 +29,13 @@ class MoviesManager {
             if let safeData = data {
                 let jsonDecoder = JSONDecoder()
                 do {
+                    
                     let root = try jsonDecoder.decode(MovieData.self, from: safeData)
                     self.movies = root.data.movies
-//                    fetchMoviesImages()
-//                    if let safeMovies = self.movies, let safeImages = self.moviesImages {
-//                        checkDelegate(safeMovies, safeImages)
-//                    }
+                    fetchMoviesImages()
+                    if let safeMovies = self.movies, let safeImages = self.moviesImages {
+                        checkDelegate(safeMovies, safeImages)
+                    }
                     
                 } catch {
                     print(error)
@@ -43,5 +45,36 @@ class MoviesManager {
         dataTask.resume()
     }
     
+    func fetchMoviesImages() {
+        var images = [UIImage]()
+        if let safeMovies = movies {
+            for movie in safeMovies {
+                
+                if let dataImage = try? Data(contentsOf: movie.medium_cover_image) {
+                    if let safeImage = UIImage(data: dataImage) {
+                        images.append(safeImage)
+                    }
+                } else {
+                    
+                }
+            }
+            moviesImages = images
+        }
+    }
+    
+    func getAllMovies() {
+        if let safeMovies = movies, let safeImages = moviesImages {
+            checkDelegate(safeMovies, safeImages)
+        }
+    }
+    
+    func checkDelegate(_ movies: [Movie], _ moviesImages: [UIImage]) {
+        if let safeDelegate = delegate {
+                safeDelegate.moviesManager(movies, moviesImages)
+        }
+    }
+
+    
+ 
     
 }

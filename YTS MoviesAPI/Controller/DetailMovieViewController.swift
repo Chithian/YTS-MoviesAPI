@@ -21,6 +21,8 @@ class DetailMovieViewController: UIViewController {
     
     @IBOutlet weak var cosmosView: CosmosView!
     
+    var movieTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

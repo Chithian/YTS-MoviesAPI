@@ -11,10 +11,10 @@ import UIKit
 class MovieCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieRuntime: UILabel!
-    @IBOutlet weak var yearMovie: UILabel!
+    @IBOutlet weak var movieYear: UILabel!
     
     
     static let identifier = "MovieCollectionViewCell"
@@ -25,7 +25,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with image: UIImage) {
-        imageView.image = image
+        movieImage.image = image
     }
     
     static func nib() -> UINib {
