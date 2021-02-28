@@ -9,30 +9,28 @@ import UIKit
 
 
 class MovieViewController: UIViewController {
-    
 
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBOutlet weak var serachBox: UIView!
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-
     var movies: [Movie]?
     var images: [UIImage]?
     
     var movieManager = MoviesManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        serachBox.layer.cornerRadius = 10
+      
         movieManager.delegate = self
         movieManager.fetchMovies()
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 340)
+        layout.itemSize = CGSize(width: 195, height: 340)
         collectionView.collectionViewLayout = layout
     
-
         collectionView.register(MovieCollectionViewCell.nib(), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         
         collectionView.delegate = self
@@ -42,22 +40,38 @@ class MovieViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
-        //Change Search Border
-//        searchBar.barTintColor = UIColor.white
-//        searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
-        
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(searchTextFieldDidChange), for: .editingChanged)
 
     }
-   
-   
     
+    
+    
+    @IBAction func searchBarPressed(_ sender: UIControl) {
+        searchTextField.becomeFirstResponder()
+    }
+    
+    @objc func searchTextFieldDidChange(_ textField: UITextField) {
+        if textField.text == "" {
+            movieManager.getAllMovies()
+            return
+        }
+        
+        if let safeSearchString = textField.text {
+            movieManager.getSearchedMovies(with: safeSearchString.lowercased())
+        }
+    }
+    
+
+   
     // Navigation
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
       
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -69,10 +83,11 @@ class MovieViewController: UIViewController {
 }
 
 
+//MARK: UICollectionView Delegate
 
 extension MovieViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You Taped")
+//        print("You Taped")
         performSegue(withIdentifier: Constants.movieDetailSegue , sender: self)
     }
     
@@ -80,7 +95,7 @@ extension MovieViewController: UICollectionViewDelegate {
         let destination = segue.destination as! DetailMovieViewController
         
         if let indexPaths = self.collectionView.indexPathsForSelectedItems {
-            print(indexPaths[0])
+//            print(indexPaths[0])
             let selectedMovie = self.movies![indexPaths[0].row]
             let movieImage = self.images![indexPaths[0].row]
 
@@ -93,16 +108,6 @@ extension MovieViewController: UICollectionViewDelegate {
             destination.rankingLabel = selectedMovie.rating
             destination.youtubeID = selectedMovie.yt_trailer_code
             
-           
-            
-//            var titleLabel: String?
-//            var yearLabel: Int?
-//            var runtimeLabel: Int?
-//            var rankingLabel: Float?
-//            var summaryLabel: String?
-//            var longTitleLabel: String?
-//            var youtubeID: String?
-//            var imageMovie: UIImage?
             
         }
 
@@ -112,6 +117,7 @@ extension MovieViewController: UICollectionViewDelegate {
     
 }
 
+//MARK: UICollectionView DataSource
 extension MovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -121,10 +127,10 @@ extension MovieViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as! MovieCollectionViewCell
         cell.configure(with: UIImage(named: "monsterHunterMoive")!)
-//        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ReuseableMovieCell", for: indexPath) as! MovieCollectionViewCell
-        
+
         let index = indexPath.row
         let movie = movies![index]
     
@@ -140,12 +146,13 @@ extension MovieViewController: UICollectionViewDataSource {
 
 }
 
-
+//MARK: UICollectionView Delegate FlowLayout
 extension MovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          return CGSize(width: 200, height: 340)
     }
 }
+
 
 extension MovieViewController: MovieManagerDelegate {
     func moviesManager(_ didUpdateWithMovies: [Movie], _ withMoviesImages: [UIImage]) {
@@ -157,10 +164,17 @@ extension MovieViewController: MovieManagerDelegate {
         }
     }
     
-    
 }
 
 
+// MARK: UITextFieldDelegate  Search
 extension MovieViewController: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        return true
+    }
 }
+
+
+
+

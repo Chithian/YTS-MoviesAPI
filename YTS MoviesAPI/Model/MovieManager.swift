@@ -38,15 +38,20 @@ class MoviesManager {
                     }
                     
                 } catch {
-                    print(error)
+                    print("Fetch Movie error \(error)")
                 }
             }
         }
+        
         dataTask.resume()
     }
     
+    
+    
     func fetchMoviesImages() {
+        
         var images = [UIImage]()
+        
         if let safeMovies = movies {
             for movie in safeMovies {
                 
@@ -74,7 +79,21 @@ class MoviesManager {
         }
     }
 
-    
- 
+    func getSearchedMovies(with searchString: String) {
+        
+        var searchedMovies = [Movie]()
+        var searchedMoviesImages = [UIImage]()
+        
+        if let safeMovies = movies, let safeImages = moviesImages, let count = movies?.count {
+            for index in 0..<count {
+                if safeMovies[index].title.lowercased().contains(searchString) {
+                    searchedMovies.append(safeMovies[index])
+                    searchedMoviesImages.append(safeImages[index])
+                }
+            }
+        }
+        
+        checkDelegate(searchedMovies, searchedMoviesImages)
+    }
     
 }

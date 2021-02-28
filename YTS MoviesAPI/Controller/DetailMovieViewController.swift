@@ -19,8 +19,8 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var movieYear: UILabel!
     @IBOutlet weak var movieRunTime: UILabel!
     @IBOutlet weak var movieLongtitle: UILabel!
-    
     @IBOutlet weak var rankingCosmosView: CosmosView!
+    
     
     var titleLabel: String?
     var yearLabel: Int?
@@ -36,7 +36,7 @@ class DetailMovieViewController: UIViewController {
         super.viewDidLoad()
 
         
-        // Do any additional setup after loading the view.
+     
         moiveImage.image = imageMovie
         movieTitleLabel.text = titleLabel
         movieYear.text = String(yearLabel!)
@@ -46,10 +46,7 @@ class DetailMovieViewController: UIViewController {
 
         rankingCosmosView.rating = Double(rankingLabel! / 2)
         
-
-
-//        Watch Now Button
-
+        //Watch Now Button
         watchNowButton.layer.cornerRadius = 20
         watchNowButton.layer.shadowColor = UIColor.black.cgColor
         watchNowButton.layer.shadowOffset = CGSize(width: 4, height: 4)
@@ -61,32 +58,26 @@ class DetailMovieViewController: UIViewController {
         // Use if you need just to show the stars without getting user's input
         rankingCosmosView.settings.updateOnTouch = false
         
-//        NavigationBar
-        
+        //NavigationBar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-        
-
-//        
-     //Remove Boder Navigation
+                
+        //Remove Boder Navigation
         self.navigationController?.navigationBar.layoutIfNeeded()
- 
-        
     }
+    
     
     @IBAction func WatchNowPressed(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.youtubeSegue , sender: self)
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! YTPlayerViewController
+    
+        destination.youtubeID = youtubeID
+        
     }
-    */
-
+ 
 }

@@ -25,7 +25,6 @@ struct Movie: Codable {
     let runtime: Int
     let rating: Float
     let medium_cover_image: URL
-//    let large_cover_image: URL?
     let yt_trailer_code: String
 }
 

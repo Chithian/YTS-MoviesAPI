@@ -20,9 +20,7 @@ class YTPlayerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-
-        
-        playerView.load(withVideoId: "FrbQ0YjSFSI", playerVars: ["playsinline" : "1"])
+        playerView.load(withVideoId: youtubeID!, playerVars: ["playsinline" : "1"])
     }
     
 

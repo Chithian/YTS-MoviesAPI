@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="191" height="406"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsterHunterMoive" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-Ym-hUQ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monsterHunterMoive" translatesAutoresizingMaskIntoConstraints="NO" id="Ceo-Ym-hUQ">
                         <rect key="frame" x="10" y="0.0" width="171" height="306"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="306" id="9AH-TA-01R"/>
