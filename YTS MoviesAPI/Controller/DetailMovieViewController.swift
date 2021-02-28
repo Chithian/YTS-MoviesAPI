@@ -20,7 +20,7 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var movieRunTime: UILabel!
     @IBOutlet weak var movieLongtitle: UILabel!
     @IBOutlet weak var rankingCosmosView: CosmosView!
-    
+
     
     var titleLabel: String?
     var yearLabel: Int?
@@ -34,7 +34,6 @@ class DetailMovieViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
      
         moiveImage.image = imageMovie
@@ -43,7 +42,6 @@ class DetailMovieViewController: UIViewController {
         movieRunTime.text = String(runtimeLabel!) + " min"
         movieLongtitle.text = longTitleLabel
         movieSummaryLabel.text = summaryLabel
-
         rankingCosmosView.rating = Double(rankingLabel! / 2)
         
         //Watch Now Button

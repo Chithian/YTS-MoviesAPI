@@ -47,7 +47,6 @@ class MovieViewController: UIViewController {
     }
     
     
-    
     @IBAction func searchBarPressed(_ sender: UIControl) {
         searchTextField.becomeFirstResponder()
     }
@@ -107,13 +106,10 @@ extension MovieViewController: UICollectionViewDelegate {
             destination.imageMovie = movieImage
             destination.rankingLabel = selectedMovie.rating
             destination.youtubeID = selectedMovie.yt_trailer_code
-            
-            
+
         }
 
-        
     }
-    
     
 }
 
@@ -153,7 +149,7 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+//MARK: MovieManager Delegate
 extension MovieViewController: MovieManagerDelegate {
     func moviesManager(_ didUpdateWithMovies: [Movie], _ withMoviesImages: [UIImage]) {
         DispatchQueue.main.async {
