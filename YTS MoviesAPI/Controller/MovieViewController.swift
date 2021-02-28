@@ -28,7 +28,7 @@ class MovieViewController: UIViewController {
         movieManager.fetchMovies()
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 195, height: 340)
+        layout.itemSize = CGSize(width: 200, height: 340)
         collectionView.collectionViewLayout = layout
     
         collectionView.register(MovieCollectionViewCell.nib(), forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
@@ -40,12 +40,10 @@ class MovieViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
-        
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(searchTextFieldDidChange), for: .editingChanged)
 
     }
-    
     
     @IBAction func searchBarPressed(_ sender: UIControl) {
         searchTextField.becomeFirstResponder()
@@ -62,8 +60,6 @@ class MovieViewController: UIViewController {
         }
     }
     
-
-   
     // Navigation
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -75,12 +71,10 @@ class MovieViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
 }
-
 
 //MARK: UICollectionView Delegate
 
@@ -136,6 +130,7 @@ extension MovieViewController: UICollectionViewDataSource {
         
         let image = images![index]
         cell .movieImage.image = image
+        
         return cell
     }
     
@@ -144,7 +139,9 @@ extension MovieViewController: UICollectionViewDataSource {
 
 //MARK: UICollectionView Delegate FlowLayout
 extension MovieViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
          return CGSize(width: 200, height: 340)
     }
 }
@@ -156,17 +153,19 @@ extension MovieViewController: MovieManagerDelegate {
             
             self.movies = didUpdateWithMovies
             self.images = withMoviesImages
+            
             self.collectionView.reloadData()
         }
     }
     
 }
 
-
 // MARK: UITextFieldDelegate  Search
 extension MovieViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
+        
         return true
     }
 }

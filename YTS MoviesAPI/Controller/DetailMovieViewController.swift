@@ -65,7 +65,6 @@ class DetailMovieViewController: UIViewController {
         self.navigationController?.navigationBar.layoutIfNeeded()
     }
     
-    
     @IBAction func WatchNowPressed(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.youtubeSegue , sender: self)
         
@@ -75,7 +74,6 @@ class DetailMovieViewController: UIViewController {
         let destination = segue.destination as! YTPlayerViewController
     
         destination.youtubeID = youtubeID
-        
     }
  
 }

@@ -60,7 +60,7 @@ class MoviesManager {
                         images.append(safeImage)
                     }
                 } else {
-                    
+                    images.append(UIImage(systemName: "questionmark.folder.fill")!)
                 }
             }
             moviesImages = images
@@ -86,7 +86,9 @@ class MoviesManager {
         
         if let safeMovies = movies, let safeImages = moviesImages, let count = movies?.count {
             for index in 0..<count {
+                
                 if safeMovies[index].title.lowercased().contains(searchString) {
+                    
                     searchedMovies.append(safeMovies[index])
                     searchedMoviesImages.append(safeImages[index])
                 }
