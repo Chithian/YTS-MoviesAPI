@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ihN-pf-oEG">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -44,21 +45,21 @@
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zhU-rq-Xac" userLabel="Search View" customClass="UIControl" customModule="YTS_MoviesAPI" customModuleProvider="target">
                                 <rect key="frame" x="20" y="54" width="374" height="40"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VlJ-i6-SAB">
-                                        <rect key="frame" x="1" y="0.0" width="380" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="VlJ-i6-SAB">
+                                        <rect key="frame" x="122.00000000000001" y="0.0" width="131.33333333333337" height="40"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="obe-EK-aix">
                                                 <rect key="frame" x="0.0" y="11.333333333333332" width="19.666666666666668" height="18"/>
+                                                <color key="tintColor" systemColor="systemGrayColor"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Movie . . ." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LcP-cP-XtU">
-                                                <rect key="frame" x="27.666666666666657" y="10.666666666666673" width="352.33333333333337" height="18.666666666666671"/>
+                                                <rect key="frame" x="20.666666666666664" y="10.666666666666673" width="110.66666666666669" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                             </textField>
                                         </subviews>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="380" id="61R-N1-G8n"/>
                                             <constraint firstAttribute="height" constant="40" id="7eK-Mc-u9z"/>
                                             <constraint firstAttribute="trailing" secondItem="LcP-cP-XtU" secondAttribute="trailing" id="yuH-aC-l49"/>
                                         </constraints>
@@ -67,7 +68,7 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Cv9-ab-isf"/>
-                                    <constraint firstItem="VlJ-i6-SAB" firstAttribute="leading" secondItem="zhU-rq-Xac" secondAttribute="leading" constant="1" id="lIS-Sr-xu2"/>
+                                    <constraint firstItem="VlJ-i6-SAB" firstAttribute="leading" secondItem="zhU-rq-Xac" secondAttribute="leading" constant="122.00000000000001" id="lIS-Sr-xu2"/>
                                     <constraint firstItem="VlJ-i6-SAB" firstAttribute="top" secondItem="zhU-rq-Xac" secondAttribute="top" id="xOO-qC-qB3"/>
                                 </constraints>
                                 <connections>
@@ -109,7 +110,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6az-HU-GZr">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6az-HU-GZr">
                                 <rect key="frame" x="20.666666666666657" y="460" width="305.66666666666674" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-lZ-YrH">
@@ -142,8 +143,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wml-Jq-NFP" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="185.66666666666669" y="0.0" width="120" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wml-Jq-NFP" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="185.66666666666669" y="5" width="120" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
@@ -329,6 +330,11 @@
             <point key="canvasLocation" x="1615.9420289855075" y="114.1304347826087"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Wml-Jq-NFP">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
