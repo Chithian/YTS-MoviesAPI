@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,10 +65,10 @@
                         </subviews>
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hkb-SO-x1N">
-                        <rect key="frame" x="5" y="376" width="60" height="3.5"/>
-                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="7" y="376" width="60" height="3.5"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="7" id="2hM-ej-e1J"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="2hM-ej-e1J"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="F69-C0-7pl"/>
                         </constraints>
                     </imageView>
@@ -84,7 +85,7 @@
                 <constraint firstItem="Ceo-Ym-hUQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fhn-kI-k6F"/>
                 <constraint firstItem="fpe-G3-wPF" firstAttribute="top" secondItem="inn-oN-PF2" secondAttribute="bottom" constant="10" id="jaI-iz-JWj"/>
                 <constraint firstItem="inn-oN-PF2" firstAttribute="top" secondItem="Ceo-Ym-hUQ" secondAttribute="bottom" constant="10" id="nGV-Ew-OKv"/>
-                <constraint firstItem="Hkb-SO-x1N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="txj-oE-U41"/>
+                <constraint firstItem="Hkb-SO-x1N" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="txj-oE-U41"/>
                 <constraint firstAttribute="trailing" secondItem="inn-oN-PF2" secondAttribute="trailing" constant="10" id="zy6-Sx-HPK"/>
             </constraints>
             <size key="customSize" width="191" height="406"/>
