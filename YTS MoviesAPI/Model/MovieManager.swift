@@ -60,7 +60,11 @@ class MoviesManager {
                         images.append(safeImage)
                     }
                 } else {
-                    images.append(UIImage(systemName: "questionmark.folder.fill")!)
+                    if #available(iOS 13.0, *) {
+                        images.append(UIImage(systemName: "questionmark.folder.fill")!)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 }
             }
             moviesImages = images
