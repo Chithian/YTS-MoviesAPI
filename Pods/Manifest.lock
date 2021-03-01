@@ -1,0 +1,20 @@
+PODS:
+  - Cosmos (23.0.0)
+  - youtube-ios-player-helper (1.0.3)
+
+DEPENDENCIES:
+  - Cosmos (~> 23.0)
+  - youtube-ios-player-helper
+
+SPEC REPOS:
+  trunk:
+    - Cosmos
+    - youtube-ios-player-helper
+
+SPEC CHECKSUMS:
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
+
+PODFILE CHECKSUM: bcfdf6ebd4be4e6f8ddb327439f8e6292c5bec9c
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,6 @@
+framework module Pods_YTS_MoviesAPI {
+  umbrella header "Pods-YTS MoviesAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
